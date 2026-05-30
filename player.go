@@ -11,8 +11,8 @@ func newPlayer(x float64) Player {
 }
 
 func (p *Player) Update() {
-	if ebiten.IsKeyPressed(ebiten.KeyA) {p.x -= 1}
-	if ebiten.IsKeyPressed(ebiten.KeyD) {p.x += 1}
+	if ebiten.IsKeyPressed(ebiten.KeyA) {p.x -= 4}
+	if ebiten.IsKeyPressed(ebiten.KeyD) {p.x += 4}
 }
 
 func (p *Player) Draw(screen *ebiten.Image) {
