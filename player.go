@@ -17,6 +17,7 @@ func (p *Player) Update() {
 
 func (p *Player) Draw(screen *ebiten.Image) {
 	op := &ebiten.DrawImageOptions{}
+	op.GeoM.Scale(0.3, 0.3)
 	op.GeoM.Translate(
 		p.x,
 		100,
