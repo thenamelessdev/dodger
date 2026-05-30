@@ -20,7 +20,7 @@ func (p *Player) Draw(screen *ebiten.Image) {
 	op.GeoM.Scale(0.3, 0.3)
 	op.GeoM.Translate(
 		p.x,
-		100,
+		250,
 	)
 	screen.DrawImage(playerImg, op)
 }
