@@ -1,6 +1,6 @@
 module dodger
 
-go 1.26.2
+go 1.24.0
 
 require (
 	github.com/ebitengine/gomobile v0.0.0-20250923094054-ea854a63cce1 // indirect
