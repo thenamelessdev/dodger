@@ -10,9 +10,11 @@ import (
 )
 
 var playerImg *ebiten.Image
+var enemyImg *ebiten.Image
 
 func init() {
 	playerImg = loadImage("assets/Player.png")
+    enemyImg = loadImage("assets/Enemy.png")
 }
 
 func loadImage(path string) *ebiten.Image {
