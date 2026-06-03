@@ -23,7 +23,7 @@ func newGame() *Game {
 		player: newPlayer(10),
 	}
 
-	for i := 0; i < 5; i++ {
+	for i := 0; i < 7; i++ {
 		g.Enemies = append(g.Enemies, newEnemy())
 	}
 
