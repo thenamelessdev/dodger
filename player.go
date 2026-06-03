@@ -1,6 +1,12 @@
 package main
 
-import "github.com/hajimehoshi/ebiten/v2"
+import (
+	"image/color"
+	"os"
+
+	"github.com/hajimehoshi/ebiten/v2"
+	"github.com/hajimehoshi/ebiten/v2/vector"
+)
 
 type Player struct {
 	x float64
@@ -23,4 +29,15 @@ func (p *Player) Draw(screen *ebiten.Image) {
 		250,
 	)
 	screen.DrawImage(playerImg, op)
+
+	if os.Getenv("DEBUG") != "" {
+		x, y, w, h := p.Bounds()
+		vector.StrokeRect(screen, float32(x), float32(y), float32(w), float32(h), 1, color.RGBA{255, 0, 0, 255}, false)
+	}
+}
+
+func (p *Player) Bounds() (x, y, w, h float64) {
+    w = float64(playerImg.Bounds().Dx()) * 0.2
+    h = float64(playerImg.Bounds().Dy()) * 0.2
+    return p.x, 250, w, h
 }

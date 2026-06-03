@@ -33,7 +33,7 @@ func newGame() *Game {
 func (g *Game) Update() error {
 	g.player.Update()
 	for i := range g.Enemies {
-		g.Enemies[i].Update()
+		g.Enemies[i].Update(g)
 	}
 	return nil
 }
