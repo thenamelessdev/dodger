@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"image/color"
 	"math/rand"
 	"os"
@@ -34,7 +33,7 @@ func (e *Enemy) Update(g *Game) {
 	x1, y1, w1, h1 := e.Bounds()
 	x2, y2, w2, h2 := g.player.Bounds()
 	if Overlaps(x1, y1, w1, h1, x2, y2, w2, h2) {
-		fmt.Println("Collision ", rand.Int())
+		g.gameOver = true
 	}
 }
 

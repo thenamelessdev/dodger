@@ -4,6 +4,7 @@ import (
 	"image/color"
 
 	"github.com/hajimehoshi/ebiten/v2"
+	"github.com/ncruces/zenity"
 )
 
 var (
@@ -31,6 +32,10 @@ func newGame() *Game {
 }
 
 func (g *Game) Update() error {
+	if g.gameOver {
+		zenity.Info("Game Over!", zenity.Title("Game Over"))
+		g.gameOver = false
+	}
 	g.player.Update()
 	for i := range g.Enemies {
 		g.Enemies[i].Update(g)
