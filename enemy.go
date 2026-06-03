@@ -17,7 +17,7 @@ type Enemy struct {
 
 func newEnemy() Enemy {
 	return Enemy{
-		X: float64(rand.Intn(screenW)),
+		X: float64(rand.Intn(screenW + 10)),
 		Y: float64(rand.Intn(100)),
 		speed: 2,
 	}
@@ -28,7 +28,7 @@ func (e *Enemy) Update(g *Game) {
 
 	if e.Y > float64(screenH) {
 		e.Y = 0
-		e.X = float64(rand.Intn(screenW))
+		e.X = float64(rand.Intn(screenW + 10))
 	}
 
 	x1, y1, w1, h1 := e.Bounds()
