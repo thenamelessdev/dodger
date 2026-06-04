@@ -17,8 +17,8 @@ func newPlayer(x float64) Player {
 }
 
 func (p *Player) Update() {
-	if ebiten.IsKeyPressed(ebiten.KeyA) {p.x -= 4}
-	if ebiten.IsKeyPressed(ebiten.KeyD) {p.x += 4}
+	if ebiten.IsKeyPressed(ebiten.KeyA) && p.x > 0 {p.x -= 4}
+	if ebiten.IsKeyPressed(ebiten.KeyD) && p.x < float64(screenW) {p.x += 4}
 }
 
 func (p *Player) Reset() {
