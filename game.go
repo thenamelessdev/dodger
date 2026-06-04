@@ -33,6 +33,10 @@ func newGame() *Game {
 
 func (g *Game) Update() error {
 	if g.gameOver {
+		for e := range g.Enemies {
+			g.Enemies[e].Reset()
+		}
+		g.player.Reset()
 		zenity.Info("Game Over!", zenity.Title("Game Over"))
 		g.gameOver = false
 	}

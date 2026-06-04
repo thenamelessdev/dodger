@@ -21,6 +21,10 @@ func (p *Player) Update() {
 	if ebiten.IsKeyPressed(ebiten.KeyD) {p.x += 4}
 }
 
+func (p *Player) Reset() {
+	p.x = 10
+}
+
 func (p *Player) Draw(screen *ebiten.Image) {
 	op := &ebiten.DrawImageOptions{}
 	op.GeoM.Scale(0.2, 0.2)

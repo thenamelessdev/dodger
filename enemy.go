@@ -22,6 +22,11 @@ func newEnemy() Enemy {
 	}
 }
 
+func (e *Enemy) Reset() {
+	e.X = float64(rand.Intn(screenW + 10))
+	e.Y = float64(rand.Intn(100))
+}
+
 func (e *Enemy) Update(g *Game) {
 	e.Y += float64(e.speed)
 
