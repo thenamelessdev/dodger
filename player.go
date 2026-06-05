@@ -27,10 +27,10 @@ func (p *Player) Reset() {
 
 func (p *Player) Draw(screen *ebiten.Image) {
 	op := &ebiten.DrawImageOptions{}
-	op.GeoM.Scale(0.2, 0.2)
+	op.GeoM.Scale(0.1, 0.1)
 	op.GeoM.Translate(
 		p.x,
-		250,
+		300,
 	)
 	screen.DrawImage(playerImg, op)
 
@@ -41,7 +41,7 @@ func (p *Player) Draw(screen *ebiten.Image) {
 }
 
 func (p *Player) Bounds() (x, y, w, h float64) {
-    w = float64(playerImg.Bounds().Dx()) * 0.2
-    h = float64(playerImg.Bounds().Dy()) * 0.2
-    return p.x, 250, w, h
+    w = float64(playerImg.Bounds().Dx()) * 0.1
+    h = float64(playerImg.Bounds().Dy()) * 0.1
+    return p.x, 300, w, h
 }
