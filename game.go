@@ -4,7 +4,6 @@ import (
 	"image/color"
 
 	"github.com/hajimehoshi/ebiten/v2"
-	"github.com/ncruces/zenity"
 )
 
 var (
@@ -37,7 +36,6 @@ func (g *Game) Update() error {
 			g.Enemies[e].Reset()
 		}
 		g.player.Reset()
-		zenity.Info("Game Over!", zenity.Title("Game Over"))
 		g.gameOver = false
 	}
 	g.player.Update()
